@@ -1,11 +1,12 @@
 ## ImageSweep
 
-ImageSweep is a python script used to remove unused drawables from your application. During the build process, all indexed .pngs inside of 'drawable' folders get crunched so that their size is much much smaller; However, even unused images get bundled with your apk. This means that your apk is potentially much much larger than it needs to be even after compression.
+ImageSweep is a python script used to remove or backup unused drawables from your application. During the build process, all indexed .pngs inside of 'drawable' folders get crunched so that their size is much much smaller; However, even unused images get bundled with your apk. This means that your apk is potentially much much larger than it needs to be even after compression.
 
 ##Usage
-		 python image_sweep.py project_src_directory
+		 python image_sweep.py project_src_directory destination_directory
 
 Where project_src_directory is the relative or absolute file-path where your source code lives. Make sure the chosen directory contains ALL of your source code / AndroidManifest.xml, but none of the libraries you've included (the script auto-determines where the /res folder is and libraries can potentially break that).
+destination_directory parameter is optional, add it if you want to backup the files.
 
 ##Requirements
 This script has been tested on Python 2.7 and Python 3.0.
