@@ -113,7 +113,7 @@ if num_args == 2:
   #Delete the unused pngs.
   for root, dirs, files in os.walk(resDirectory):
       for file in files:
-        # deleteIfUnusedPNG(root, file)
+        deleteIfUnusedPNG(root, file)
 elif num_args == 3:
   #move the files
   for root, dirs, files in os.walk(resDirectory):
@@ -122,5 +122,5 @@ elif num_args == 3:
 
 #Print out how many files were actually deleted.
 print ""
-print "%d file(s) %s" % (files_deleted, num_args == 2 ? "deleted." : "moved.")
+print "%d file(s) %s" % (files_deleted, ("deleted." if num_args == 2 else "moved."))
 print "%.2f megabytes freed" % (mega_bytes_deleted)
